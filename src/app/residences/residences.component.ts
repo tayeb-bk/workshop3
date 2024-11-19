@@ -16,7 +16,7 @@ export class ResidencesComponent {
     { id: 1, name: "El fel", address: "Borj Cedria", image: "../../assets/images/DALL·E 2024-11-19 00.44.08 - An elegant and modern residential building named 'El Fel', featuring sleek architecture with large windows, a contemporary facade, and well-designed l.webp", status: "Disponible" },
     { id: 2, name: "El yasmine", address: "Ezzahra", image: "../../assets/images/DALL·E 2024-11-19 00.44.14 - A beautiful and spacious residential building named 'El Yasmin', featuring modern design with elegant architectural details, large glass windows, and .webp", status: "Disponible" },
     { id: 3, name: "El Arij", address: "Rades", image: "../../assets/images/DALL·E 2024-11-19 00.44.17 - A sophisticated and elegant residential building named 'El Arij', with a modern architectural style, featuring clean lines, large windows, and a minim.webp", status: "Vendu" },
-    { id: 4, name: "El Anber", address: "inconnu", image: "../../assets/images/R4.jpg", status: "En Construction" }
+    { id: 4, name: "El Anber", address: "inconnu", image: "../../assets/images/Reg4.jfif", status: "En Construction" }
   ];
   searchAddress: string = '';
 
@@ -29,11 +29,14 @@ export class ResidencesComponent {
       alert('L adresse de la résidence est : ' + residence.address);
     }
   }
-  residencesLike!: Residence[];
+  residencesLike: Residence[]=[];
 
   likeRes(res: Residence) {
-    this.residencesLike.push(res);
-    console.log(this.residencesLike);
+    if(!this.residencesLike.includes(res)){
+      this.residencesLike.push(res);
+      alert(this.residencesLike.map(res => res.name));
+    }
+
   }
 
   filteredResidences(): any[] {
