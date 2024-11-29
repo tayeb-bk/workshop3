@@ -1,0 +1,36 @@
+<div class="card" style="width: 18rem;">
+  <div *ngIf="residence; else notFound">
+    <img
+      class="card-img-top img-fluid"
+      [src]="residence.image"
+      [alt]="residence.name"
+    />
+
+    <div class="card-body">
+      <h5 class="card-title">{{ residence.name }}</h5>
+      <p class="card-text"><strong>Adresse:</strong> {{ residence.address }}</p>
+      <p class="card-text">
+        <strong>Status:</strong>
+        <span
+          [ngClass]="{
+            'badge bg-success': residence.status === 'Disponible',
+            'badge bg-warning': residence.status === 'En Construction',
+            'badge bg-danger': residence.status === 'Vendu'
+          }">
+          {{ residence.status }}
+        </span>
+        <button class="btn btn-primary" (click)="afficherNext()">Suivant</button>
+      </p>
+    </div>
+
+
+
+  </div>
+  <button class="btn btn-success" routerLink="/addResidence"> Add Residence </button>
+  <button class="btn btn-warning" routerLink="/updateResidence">Update Residence</button>
+  <ng-template #notFound>
+    <div class="alert alert-danger text-center m-3" role="alert">
+      Résidence non trouvée.
+    </div>
+  </ng-template>
+</div>

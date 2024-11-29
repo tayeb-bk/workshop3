@@ -40,8 +40,20 @@
             (click)="likeRes(residence)">
             Like
           </button>
+
+
+          <a routerLink="['apartmentsByResidence', residence.id]" class="btn btn-primary">
+            Appartements List
+          </a>
+
+          <button (click)="navigateToDetails(residence.id)" class="btn btn-warning">
+            Détails
+          </button>
+
         </div>
       </div>
     </div>
   </div>
+
 </div>
+

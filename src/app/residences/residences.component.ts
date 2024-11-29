@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Residence } from '../core/models/Residence.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-residences',
@@ -45,6 +46,12 @@ export class ResidencesComponent {
       residence.address.toLowerCase().includes(this.searchAddress.toLowerCase())
   );
 }
+constructor(private router: Router , private activaterRouter: ActivatedRoute) {}
+
+navigateToDetails(id: number): void {
+  this.router.navigate(['/detailsResidance', id]);
+}
 
 
 }
+
