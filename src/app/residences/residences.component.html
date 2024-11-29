@@ -5,7 +5,7 @@
     placeholder="Rechercher par adresse"
     [(ngModel)]="searchAddress"
   />
-<hr>
+  <hr>
   <div class="row">
     <div class="card" style="width: 18rem;" *ngFor="let residence of filteredResidences()">
       <div class="card h-100" style="width: 18rem;">
@@ -20,15 +20,13 @@
           <p class="card-text">Status:
             <span *ngIf="residence.status === 'Disponible'" style="color: green;">
               Disponible
-           </span>
-           <span *ngIf="residence.status === 'En Construction'" style="color: orange;">
+            </span>
+            <span *ngIf="residence.status === 'En Construction'" style="color: orange;">
               En Construction
-           </span>
-           <span *ngIf="residence.status === 'Vendu'" style="color: red;">
+            </span>
+            <span *ngIf="residence.status === 'Vendu'" style="color: red;">
               Vendu
-           </span>
-
-
+            </span>
           </p>
           <button
             class="btn btn-info"
@@ -41,19 +39,16 @@
             Like
           </button>
 
-
-          <a routerLink="['apartmentsByResidence', residence.id]" class="btn btn-primary">
+          <!-- Use routerLink instead of href -->
+          <a [href]="'/afficherApartementDeResidence/' + residence.id" class="btn btn-primary" aria-label="Voir la liste des appartements">
             Appartements List
           </a>
 
           <button (click)="navigateToDetails(residence.id)" class="btn btn-warning">
             Détails
           </button>
-
         </div>
       </div>
     </div>
   </div>
-
 </div>
-
