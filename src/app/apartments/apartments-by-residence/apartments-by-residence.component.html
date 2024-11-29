@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3>Liste des appartements de la résidence</h3>
+
+  <div *ngIf="apartment && apartment.length > 0">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let appart of apartment">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Appartement {{ appart.apartNum }}</h5>
+            <p><strong>Surface:</strong> {{ appart.surface }} m²</p>
+            <p><strong>Catégorie:</strong> {{ appart.category }}</p>
+            <p><strong>Étage:</strong> {{ appart.floorNum }}</p>
+            <p *ngIf="appart.terrace">
+              <strong>Terrasse:</strong> {{ appart.surfaceterrace }} m²
+            </p>
+            <p *ngIf="!appart.terrace"><strong>Pas de terrasse</strong></p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message si aucun appartement n'a été trouvé -->
+  <div *ngIf="!apartment?.length">
+    <p>Aucun appartement trouvé pour cette résidence.</p>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h2>Liste des Appartements</h2>
+  <button [routerLink]="['/add-apartment']" class="btn btn-success mb-3">
+    Ajouter un nouvel appartement
+  </button>
+  <h2>Liste des Appartements</h2>
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Numéro d'Appartement</th>
+        <th>Étage</th>
+        <th>Surface (m²)</th>
+        <th>Terrasse</th>
+        <th>Surface Terrasse (m²)</th>
+        <th>Catégorie</th>
+        <th>ID de la Résidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apartment of apartments; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ apartment.apartNum }}</td>
+        <td>{{ apartment.floorNum }}</td>
+        <td>{{ apartment.surface }}</td>
+        <td>{{ apartment.terrace ? 'Oui' : 'Non' }}</td>
+        <td>{{ apartment.surfaceterrace }}</td>
+        <td>{{ apartment.category }}</td>
+        <td>{{ apartment.ResidenceId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
