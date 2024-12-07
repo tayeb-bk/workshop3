@@ -1,0 +1,16 @@
+<p>register works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+  <label for="">Name</label>
+  <input type="text" formControlName="username">
+  <div >
+    <h3 color="red" *ngIf="registerForm.get('username')?.errors?.['required']">is required</h3>
+    <h3 color="red" *ngIf="registerForm.get('username')?.errors?.['minlenght']">is least 3 caractere</h3>
+    <h3 color="red" *ngIf="registerForm.get('username')?.errors?.['maxlenght']">is max 50 caractere</h3>
+    <h3 color="red" *ngIf="registerForm.get('username')?.errors?.['pattern']"> only letters</h3>
+  </div>
+  <label for="">email</label>
+  <input type="text" formControlName="email">
+  <label for="">password</label>
+  <input type="text" formControlName="password">
+  <input type="submit" >
+</form>

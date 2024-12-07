@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ResidencesComponent } from './residences/residences.component';
 import { ProductComponent } from './product/product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,6 +16,7 @@ import { AddApartmentComponent } from './apartments/add-apartment/add-apartment.
 import { AppRoutingModule } from './app-routing.module';
 import { UpdateResidenceComponent } from './residences/update-residence/update-residence.component';
 import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RouterModule } from '@angular/router';
     ApartmentsByResidenceComponent,
     AddApartmentComponent,
     UpdateResidenceComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -39,6 +41,8 @@ import { RouterModule } from '@angular/router';
     ResidencesComponent,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
+
 
   ],
   providers: [],

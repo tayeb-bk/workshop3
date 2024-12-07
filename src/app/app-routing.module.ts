@@ -10,6 +10,7 @@ import { AddResidenceComponent } from './residences/add-residence/add-residence.
 import { UpdateResidenceComponent } from './residences/update-residence/update-residence.component';
 import { ApartmentsComponent } from './apartments/apartments.component';
 import { ApartmentsByResidenceComponent } from './apartments/apartments-by-residence/apartments-by-residence.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'afficherApartement', component:ApartmentsComponent},
   { path: 'afficherApartementDeResidence/:id', component: ApartmentsByResidenceComponent },
   {path:'add-apartment',component: AddResidenceComponent},
+  {path:'register', component: RegisterComponent},
   {path:'**' , component:NotFoundComponentComponent}
 
 
